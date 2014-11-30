@@ -1,0 +1,543 @@
+<extend name="Base/common"/>
+<block name="body">
+    <div class="wrap-base wrap-mbottom-20 wrap-mtop-20">
+        <div class="wrap-mbottom-20">
+            <div data-adurl="http://midas.rong360.com/s?z=dbname&amp;c=9&amp;op=1"><div style="width:990px;height:90px;border:none;padding:0px;margin:0px;overflow:hidden;" class="adsame-banner-box"><a target="_blank" href="http://midas.rong360.com/c?z=dbname&amp;la=0&amp;si=1&amp;cg=1&amp;c=9&amp;ci=10&amp;or=11&amp;l=10&amp;bg=10&amp;b=9&amp;u=http://campaign.rong360.com/landing/standardxdp.html"><img style="width:990px;height:90px;border:none;" src="http://www.rong360.com/ad/dbname/2014/11/0_8.png"></a></div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+            $("[data-adurl]").each(function (index, item) {
+            var el = $(item);
+                    $.ajax({
+                    type: 'GET',
+                            url: '/api/proxy',
+                            data: {
+                            url: $(item).data("adurl")
+                            },
+                            timeout: 5000,
+                            success: function (data) {
+                            data = $.parseJSON(data);
+                                    el.html(data.data);
+                            }
+                    });
+            });
+            });</script>	
+    </div>
+
+    <div class="wrap-full main-index wrap-mtop-20">
+        <div class="wrap-base wrap-clear" id="contentWrap">
+            <div class="wrap-main">					
+                <div class="wrap-main-inner">
+                    <div id="FormDaikuanSearch" class="daikuan-search wrap-mbottom-40">
+                        <form method="get" action="/search.html">
+                            <div class="form-wrap contact-info">
+                                <div data-field="loan_limit" class="field-wrap">
+                                    <label class="short">贷款金额</label>
+                                    <div class="field">
+                                        <div style="position: static;" data-option-input="true" data-ui="ui-select" class="ui-select wrap-left">
+                                            <div class="select-valueBar">
+                                                <input type="hidden" check-status="yes" value="5" name="loan_limit">
+                                                <div class="select-value"><input type="text" maxlength="5" value="5" class="select-text"><span class="select-tail">万元</span></div>
+                                                <span class="select-down"><i class="ui-icon">下</i></span>
+                                            </div>
+                                            <ul class="select-list" style="display: none;">
+                                                <li data-value="3" class="select-item" data-css-hover="select-hover">3万元</li>
+                                                <li data-value="5" class="select-item select-active" data-css-hover="select-hover">5万元</li>
+                                                <li data-value="10" class="select-item" data-css-hover="select-hover">10万元</li>
+                                                <li data-value="20" class="select-item" data-css-hover="select-hover">20万元</li>
+                                                <li data-value="50" class="select-item" data-css-hover="select-hover">50万元</li>
+                                                <li data-value="100" class="select-item" data-css-hover="select-hover">100万元</li>
+                                                <li data-type="input" class="select-item" data-css-hover="select-hover">其他</li>
+                                            </ul>
+                                        </div>
+                                        <div class="error">您的称呼不能为空</div>
+                                    </div>
+                                </div>
+                                <div data-field="loan_term" class="field-wrap">
+                                    <label class="short">贷款期限</label>
+                                    <span class="field">
+                                        <div data-ui="ui-select" class="ui-select" style="position: static;">
+                                            <div class="select-valueBar">
+                                                <input type="hidden" check-status="yes" autocomplete="off" value="12" name="loan_term">
+                                                <div class="select-value"><span class="select-text">12个月</span></div>
+                                                <span class="select-down"><i class="ui-icon">下</i></span>
+                                            </div>
+                                            <ul class="select-list" style="display: none;">
+                                                <li data-value="3" class="select-item" data-css-hover="select-hover">3个月</li>
+                                                <li data-value="6" class="select-item" data-css-hover="select-hover">6个月</li>
+                                                <li data-value="12" class="select-item select-active" data-css-hover="select-hover">12个月</li>
+                                                <li data-value="24" class="select-item" data-css-hover="select-hover">2年</li>
+                                                <li data-value="36" class="select-item" data-css-hover="select-hover">3年</li>
+                                                <li data-value="60" class="select-item" data-css-hover="select-hover">5年</li>
+                                                <li data-value="120" class="select-item" data-css-hover="select-hover">10年</li>
+                                            </ul>
+                                        </div>
+                                        <div class="error"></div>
+                                    </span>
+                                </div>
+                                <div data-field="op_type" class="field-wrap">
+                                    <label class="short">职业身份</label>
+                                    <span class="field">
+                                        <div data-ui="ui-select" class="ui-select" style="position: static;">
+                                            <div class="select-valueBar">
+                                                <input type="hidden" check-status="yes" value="" name="op_type">
+                                                <div class="select-value"><span class="select-text">不限</span></div>
+                                                <span class="select-down"><i class="ui-icon">下</i></span>
+                                            </div>
+                                            <ul class="select-list" style="display: none;">
+                                                <li data-value="" class="select-item select-active" data-css-hover="select-hover">不限</li>
+                                                <li data-value="1" class="select-item" data-css-hover="select-hover">企业主</li>
+                                                <li data-value="2" class="select-item" data-css-hover="select-hover">个体户</li>
+                                                <li data-value="4" class="select-item" data-css-hover="select-hover">上班族</li>
+                                                <li data-value="10" class="select-item" data-css-hover="select-hover">无固定职业</li>
+                                            </ul>
+                                        </div>
+                                        <div class="error"></div>
+                                    </span>
+                                </div>
+                                <div class="field-wrap">
+                                    <label class="short"></label>
+                                    <div class="field">
+                                        <input type="submit" value="搜 索 贷 款" class="ui-btn btn-yellow-big">
+                                    </div>
+                                </div>
+                                <div class="field-wrap tuijian">
+                                    <label class="short"></label>
+                                    <div class="field">
+                                        <span class="item"><i class="ui-icon">车</i><a rel="nofollow" href="/chedai/">车贷专区</a></span>
+                                        <span class="item"><i class="ui-icon">房</i><a rel="nofollow" href="/fangdai/">房贷专区</a></span>
+                                        <span class="item"><i class="ui-icon">人</i><a rel="nofollow" href="/guwen/">贷款顾问</a></span>
+                                    </div>
+                                </div>
+                            </div>	
+                        </form>	
+                        <script type="text/javascript">
+                                    $("#FormDaikuanSearch [type='submit']").click(function(){
+                            //提交验证
+                            var key = $.superForm("#FormDaikuanSearch").check();
+                                    return key;
+                            });</script>
+                        <div class="hot-links">
+                            <span class="doc-colore-desc">热门贷款：</span>
+                            <a href="/s_tp9m5t12" class="doc-color-link">5万个人贷款</a>
+                            <a href="/s_tp9m10t12" class="doc-color-link">10万个人贷款</a>
+                            <a href="/s_tp9m20t12f1" class="doc-color-link"> 20万企业贷款</a>
+                            <a href="/s_tp9m50t12f1" class="doc-color-link"> 50万企业贷款</a>
+                        </div>		
+                    </div>
+                    <div class="ui-titleBody main-titleBody wrap-clear wrap-mbottom-20">
+                        <div class="tb-title wrap-clear">
+                            <div class="tb-title-inner">
+                                <span class="text"><a rel="nofollow" href="">热门信用贷款</a></span>
+                                <span class="text-desc doc-color-tail">不需要抵押担保</span>
+                                <a rel="nofollow" href="/daikuan" class="tail doc-color-tail">更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                        <div class="tb-body wrap-clear">
+                            <div class="ui-table daikuan-hot-list">
+                                <table>
+                                    <colgroup>
+                                        <col width="65">
+                                        <col width="125">
+                                        <col>
+                                        <col width="75">
+                                    </colgroup>
+                                    <tbody><tr>
+                                            <td><a target="_blank" href="/p_8e856lakh"><img src="http://static.rong360.com/pimg/303.gif"></a></td>
+                                            <td><span title="$xinyongItem.title">渣打银行-现贷派</span></td>
+                                            <td>限时<b>超大力度</b>促销，利率最低至<b>5折</b>！</td>
+                                            <td><a target="_blank" href="/p_8e856lakh" class="ui-btn">查看</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a target="_blank" href="/p_7ds7e55o3"><img src="http://static.rong360.com/pimg/pab_logo_icon.gif"></a></td>
+                                            <td><span title="$xinyongItem.title">平安银行-新一贷</span></td>
+                                            <td>有1年以上房贷记录即可申请，<b>条件宽松，当天放款</b></td>
+                                            <td><a target="_blank" href="/p_7ds7e55o3" class="ui-btn">查看</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a target="_blank" href="/p_89863lglx"><img src="http://static.rong360.com/pimg/eb/eb20bbd72ced2a3b35caacee5109c6f94aa3953a.jpeg"></a></td>
+                                            <td><span title="$xinyongItem.title">花旗银行-幸福时贷</span></td>
+                                            <td><b>零抵押！</b>月利率低至<b>1.2%</b>！<b>千元购物卡礼包</b>等你拿！</td>
+                                            <td><a target="_blank" href="/p_89863lglx" class="ui-btn">查看</a></td>
+                                        </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-titleBody main-titleBody wrap-clear wrap-mbottom-40">
+                        <div class="tb-title wrap-clear">
+                            <div class="tb-title-inner">
+                                <span class="text"><a rel="nofollow" href="">热门特色贷款</a></span>
+                                <span class="text-desc doc-color-tail">不需要抵押担保</span>
+                                <a rel="nofollow" href="/daikuan" class="tail doc-color-tail">更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                        <div class="tb-body wrap-clear">
+                            <div class="ui-table daikuan-hot-list">
+                                <table>
+                                    <colgroup>
+                                        <col width="65">
+                                        <col width="125">
+                                        <col>
+                                        <col width="75">
+                                    </colgroup>
+                                    <tbody><tr>
+                                            <td><a target="_blank" href="/p_478cblrz8"><img src="http://static.rong360.com/pimg/baoruitongdianda_logo_icon.gif"></a></td>
+                                            <td><span title="$teseItem.title">宝瑞通典当-典速通</span></td>
+                                            <td>有房即可贷，<b>最快当天放款，不限借款用途</b></td>
+                                            <td><a target="_blank" href="/p_478cblrz8" class="ui-btn">查看</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a target="_blank" href="/p_f5815l6v0"><img src="http://static.rong360.com/pimg/xinhehuijin_logo_icon.gif"></a></td>
+                                            <td><span title="$teseItem.title">信和汇金-车易贷</span></td>
+                                            <td>可随时提前还款，<b>无需支付违约金</b></td>
+                                            <td><a target="_blank" href="/p_f5815l6v0" class="ui-btn">查看</a></td>
+                                        </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>				<div class="wrap-mbottom-30">
+                        <script type="text/javascript">
+                                    var googletag = googletag || {};
+                                    googletag.cmd = googletag.cmd || [];
+                                    (function() {
+                                    var gads = document.createElement('script');
+                                            gads.async = true;
+                                            gads.type = 'text/javascript';
+                                            var useSSL = 'https:' == document.location.protocol;
+                                            gads.src = (useSSL ? 'https:' : 'http:') +
+                                            '//www.googletagservices.com/tag/js/gpt.js';
+                                            var node = document.getElementsByTagName('script')[0];
+                                            node.parentNode.insertBefore(gads, node);
+                                    })();</script>
+
+                        <script type="text/javascript">
+                                    googletag.cmd.push(function() {
+                                    googletag.defineSlot('/7053729/贷款频道首页中通', [700, 90], 'div-gpt-ad-1416301996684-0').addService(googletag.pubads());
+                                            googletag.pubads().setTargeting("city", "beijing").enableSingleRequest();
+                                            googletag.enableServices();
+                                    });</script>
+                        <div style="width:700px; height:90px;display:none;" id="div-gpt-ad-1416301996684-0">
+                            <script type="text/javascript">
+                                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1416301996684-0'); });</script><iframe src="http://tpc.googlesyndication.com/safeframe/1-0-0/html/container.html" style="visibility: hidden; display: none;"></iframe>
+                            <div id="google_ads_iframe_/7053729/贷款频道首页中通_0__container__" style="border: 0pt none;"><iframe width="700" height="90" frameborder="0" id="google_ads_iframe_/7053729/贷款频道首页中通_0" name="google_ads_iframe_/7053729/贷款频道首页中通_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div><iframe width="0" height="0" frameborder="0" id="google_ads_iframe_/7053729/贷款频道首页中通_0__hidden__" name="google_ads_iframe_/7053729/贷款频道首页中通_0__hidden__" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div>
+                    </div>				<div class="ask ui-titleBody main-titleBody wrap-clear wrap-mbottom-40">
+                        <div class="tb-title wrap-clear">
+                            <div class="tb-title-inner">
+                                <span class="text"><a rel="nofollow" href="http://www.rong360.com/ask/">融诺问答</a></span>
+                                <span class="text-desc doc-color-tail">帮您解决对贷款、信用卡等金融相关的疑惑</span>
+                                <a rel="nofollow" href="http://www.rong360.com/ask/" class="tail doc-color-tail">更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                        <div class="tb-body wrap-clearfix">
+                            <div class="wrap-span">
+                                <ul class="ui-list">
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/ddugjhvhw"><span class="dot">·</span>北京信用贷款可以贷多少钱 无抵押最多可以贷多少钱？...</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/efugj7shf"><span class="dot">·</span>北京有车能做贷款吗 汽车贷款</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/dbugx4a0w"><span class="dot">·</span>在北京有房能贷款吗 我是外地人在北京有套商品房，想...</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/02ugx3vh6"><span class="dot">·</span>北京公积金贷款问题 我在北京，2010年4月起开始...</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/3cu63yvdz"><span class="dot">·</span>北京我有公司，流水可以贷款吗？ </a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/609aif2s7"><span class="dot">·</span>北京贷款 </a></li>
+                                </ul>
+                            </div>
+                            <div class="wrap-span-right">
+                                <ul class="ui-list">
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/ccuggj63v"><span class="dot">·</span>征信不好，北京有房可以贷款吗？ </a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/80u6l4s1k"><span class="dot">·</span>北京的谁能帮我贷款？ 有工作，现金发放，有社保卡，...</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/b6ug17fop"><span class="dot">·</span>我这种形式在北京可以做什么贷款 有一套住房贷款还有...</a></li>
+                                    <li class="item"><a data-track="链接|问答|大首页" target="_blank" href="http://www.rong360.com/ask/view/b0u63lvgf"><span class="dot">·</span>香河买房，北京贷款。 想在香河买房，在北京能贷款么...</a></li>
+                                </ul>
+                                <div class="ask-bar">
+                                    <form action="http://www.rong360.com/ask/search">
+                                        <input placeholder="请输入您的问题" name="q" class="key-word"><input type="hidden" value="hp_module_wenda_ansbtn" name="fr"><input type="submit" value="搜索答案" class="search"><a rel="nofollow" target="_blank" href="http://www.rong360.com/ask/submit" class="to-ask">我要提问</a>
+                                    </form>
+                                </div>
+                                <p class="doc-color-tail"><span class="doc-color-red">30450</span>位贷款专家为您解答贷款难题</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gonglue ui-titleBody main-titleBody wrap-mbottom-40">
+                        <div class="tb-title wrap-clear">
+                            <div class="tb-title-inner">
+                                <span class="text"><a rel="nofollow" href="http://www.rong360.com/gl/">贷款攻略</a></span>
+                                <a rel="nofollow" href="http://www.rong360.com/gl/" class="tail doc-color-tail">更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                        <div class="tb-body wrap-clearfix">
+                            <div data-option-event="click" data-ui="ui-tab" class="ui-tab ui-tab-cms">
+                                <div class="ui-tab-nav">
+                                    <ul class="ui-tab-nav-inner wrap-clear">
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item current ajaxtab"><span class="inner">北京贷款</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">新手攻略</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">个人信用</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">无抵押贷款攻略</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">防骗攻略</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">产品评测</span></li>
+                                        <li data-tabname="gonglue" class="ui-tab-nav-item  ajaxtab"><span class="inner">热门专题</span></li>
+                                    </ul>
+                                </div>
+                                <div class="ui-tab-content wrap-clear">
+                                    <div style="height: 176px;" class="ui-tab-content-item current">
+                                        <div class="wrap-span">
+                                            <ul class="ui-list">
+                                                <li class="item wrap-clear">
+                                                    <div class="face"><a track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/06/16/48850.html"><img width="90" height="64" src="http://www.rong360.com/gl/uploads/140616/30-1406161F135K0.png"></a></div>
+                                                    <div class="detail">
+                                                        <p class="title"><a target="_blank" href="http://www.rong360.com/gl/2014/06/16/48850.html">看一看，你的工资在北京能贷...</a></p>
+                                                        <p class="desc doc-color-tail">2014年流行的是什么？那必然是晒工资、晒年终奖啊。可是工资再高，...<a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/06/16/48850.html">[详细]</a></p>
+                                                    </div>
+                                                </li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/03/28/38333.html"><span class="dot">·</span>北京低收入者可以申请无抵押贷款吗？</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/07/02/50393.html"><span class="dot">·</span>北京房屋二次抵押贷款产品有哪些？</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/06/11/48465.html"><span class="dot">·</span>在北京怎样申请1万元信用贷款</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/05/08/44327.html"><span class="dot">·</span>北京消费贷款最高申请额度是多少</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="wrap-span-right">
+                                            <ul class="ui-list">
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/06/27/49959.html"><span class="dot">·</span>北京哪些无抵押贷款产品可提供短期借款</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2013/08/02/25347.html"><span class="dot">·</span>北京：“贷”来方便 循环贷款产品等你申请</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/05/21/46905.html"><span class="dot">·</span>北京个人消费贷新政调查：3家银行已停贷</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/02/14/32234.html"><span class="dot">·</span>北京月入3000元工薪族 可申请的无抵押贷款产品</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2014/01/22/31988.html"><span class="dot">·</span>北京个体户无抵押贷款不用愁，3款可选</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2013/12/26/31404.html"><span class="dot">·</span>北京无抵押贷款：公务员和屌丝区别有多大？</a></li>
+                                                <li class="item"><a data-track="链接|攻略|大首页" target="_blank" href="http://www.rong360.com/gl/2013/08/30/26763.html"><span class="dot">·</span>北京：不看不知道&#12288;三款信用贷款产品让我眼前一亮</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                    <div style="height: 176px;" class="ui-tab-content-item">
+                                        <div style="height: 32px;line-height: 32px;margin: 0 auto;width: 114px;padding-top: 65px;">
+                                            <img style="width: 32px;height: 32px;margin-right: 8px;" src="http://www.rong360.com/static/fangdaizige/images/loading.gif">正在加载中...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>			</div>
+            </div>
+            <div class="wrap-sider">
+                <div class="wrap-sider-inner main-index-silder">
+                    <div class="wrap-mbottom-30">
+                        <script type="text/javascript">
+                                    var googletag = googletag || {};
+                                    googletag.cmd = googletag.cmd || [];
+                                    (function() {
+                                    var gads = document.createElement('script');
+                                            gads.async = true;
+                                            gads.type = 'text/javascript';
+                                            var useSSL = 'https:' == document.location.protocol;
+                                            gads.src = (useSSL ? 'https:' : 'http:') +
+                                            '//www.googletagservices.com/tag/js/gpt.js';
+                                            var node = document.getElementsByTagName('script')[0];
+                                            node.parentNode.insertBefore(gads, node);
+                                    })();</script>
+
+                        <script type="text/javascript">
+                                    googletag.cmd.push(function() {
+                                    googletag.defineSlot('/7053729/大首页右侧250x250', [250, 250], 'div-gpt-ad-1379926427357-0').addService(googletag.pubads());
+                                            googletag.pubads().setTargeting("city", "beijing").enableSingleRequest();
+                                            googletag.enableServices();
+                                    });</script>
+                        <div style="width: 250px; height: 250px;" id="div-gpt-ad-1379926427357-0">
+                            <script type="text/javascript">
+                                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379926427357-0'); });</script><div id="google_ads_iframe_/7053729/大首页右侧250x250_0__container__" style="border: 0pt none;"><iframe width="250" height="250" frameborder="0" id="google_ads_iframe_/7053729/大首页右侧250x250_0" name="google_ads_iframe_/7053729/大首页右侧250x250_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div><iframe width="0" height="0" frameborder="0" id="google_ads_iframe_/7053729/大首页右侧250x250_0__hidden__" name="google_ads_iframe_/7053729/大首页右侧250x250_0__hidden__" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe>
+                        </div>
+                    </div>
+                    <div class="banker-list wrap-mbottom-20">
+                        <div class="ui-titleBody">
+                            <div class="tb-title wrap-clear">
+                                <div class="tb-title-inner">
+                                    <span class="text">贷款咨询顾问</span>
+                                    <a href="/guwen/" class="tail doc-color-tail" rel="nofollow">查看更多</a>
+                                </div>
+                            </div>
+                            <div data-target="_blank" data-href="http://www.rong360.com/guwen/gw-3a859lrz5.html?area=4&amp;pos=1&amp;fr=search_page" data-css-hover="ui-hover-graybg" class="tb-body">
+                                <div class="wrap-clear face-info">
+                                    <div class="wrap-left face ui-face-person"><img onerror="this.src='/static/rongui/images/common/face.png'" src="http://static.rong360.com/bh-img/a2/a20f963a9f260bc9725b9f552f1de9f4ee9265d7.jpeg"></div>
+                                    <div class="wrap-left info"><a ra-data-al="" href="http://www.rong360.com/guwen/gw-3a859lrz5.html?area=4&amp;pos=1&amp;fr=search_page" target="_blank"><strong>吴经理</strong></a>
+                                        <style>
+                                            .wrap-sider .face-info .ui-icon {
+                                                margin:-4px 20px 0 0;
+                                            }
+                                        </style>
+                                        <span class="doc-text-desc"><i title="身份认证" class="ui-icon ui-icon-cer-done"></i></span>
+                                        <span class="doc-text-desc"><i title="企业员工认证" class="ui-icon ui-icon-comcer-done"></i></span>
+                                    </div>
+                                    <div style="margin-top:10px;width:165px;" class="wrap-left">
+                                        <span class="score">
+
+                                            <b></b><b></b>                                <em></em>
+                                            <i></i><i></i>                                                    </span>
+                                        <span class="service_rate bg_red">高于</span>
+                                        <span style="color:#e84006;">&nbsp;&nbsp;14.4%</span>
+                                    </div>
+                                </div>
+                                <p class="doc-color-tail"><nobr>北京伟嘉安捷投资担保有限公司</nobr></p>
+                            </div>
+                            <div data-target="_blank" data-href="http://www.rong360.com/guwen/gw-de9e6b66p.html?area=4&amp;pos=2&amp;fr=search_page" data-css-hover="ui-hover-graybg" class="tb-body">
+                                <div class="wrap-clear face-info">
+                                    <div class="wrap-left face ui-face-person"><img onerror="this.src='/static/rongui/images/common/face.png'" src="http://static.rong360.com/bh-img/7b/7bf6d29f7951b6c7ea894fb1d37b1dc5304d830f.jpeg"></div>
+                                    <div class="wrap-left info"><a ra-data-al="" href="http://www.rong360.com/guwen/gw-de9e6b66p.html?area=4&amp;pos=2&amp;fr=search_page" target="_blank"><strong>闫经理</strong></a>
+                                        <style>
+                                            .wrap-sider .face-info .ui-icon {
+                                                margin:-4px 20px 0 0;
+                                            }
+                                        </style>
+                                        <span class="doc-text-desc"><i title="身份认证" class="ui-icon ui-icon-cer-done"></i></span>
+                                        <span class="doc-text-desc"><i title="企业员工认证" class="ui-icon ui-icon-comcer-done"></i></span>
+                                    </div>
+                                    <div style="margin-top:10px;width:165px;" class="wrap-left">
+                                        <span class="score">
+
+                                            <b></b><b></b><b></b><b></b><b></b>                                                                                    </span>
+                                        <span class="service_rate bg_red">高于</span>
+                                        <span style="color:#e84006;">&nbsp;&nbsp;69.2%</span>
+                                    </div>
+                                </div>
+                                <p class="doc-color-tail"><nobr>融联伟业投资担保（北京）有限公...</nobr></p>
+                            </div>
+                            <div data-target="_blank" data-href="http://www.rong360.com/guwen/gw-c2860lgz5.html?area=4&amp;pos=3&amp;fr=search_page" data-css-hover="ui-hover-graybg" class="tb-body">
+                                <div class="wrap-clear face-info">
+                                    <div class="wrap-left face ui-face-person"><img onerror="this.src='/static/rongui/images/common/face.png'" src="http://static.rong360.com/bh-img/5c/5c08a1fda39c06b6da3bd3a320a4b59d3965b36d.jpeg"></div>
+                                    <div class="wrap-left info"><a ra-data-al="" href="http://www.rong360.com/guwen/gw-c2860lgz5.html?area=4&amp;pos=3&amp;fr=search_page" target="_blank"><strong>钟经理</strong></a>
+                                        <style>
+                                            .wrap-sider .face-info .ui-icon {
+                                                margin:-4px 20px 0 0;
+                                            }
+                                        </style>
+                                        <span class="doc-text-desc"><i title="身份认证" class="ui-icon ui-icon-cer-done"></i></span>
+                                        <span class="doc-text-desc"><i title="企业员工认证" class="ui-icon ui-icon-comcer-done"></i></span>
+                                    </div>
+                                    <div style="margin-top:10px;width:165px;" class="wrap-left">
+                                        <span class="score">
+
+                                            <b></b><b></b><b></b><b></b>                                <em></em>
+                                        </span>
+                                        <span class="service_rate bg_red">高于</span>
+                                        <span style="color:#e84006;">&nbsp;&nbsp;56.7%</span>
+                                    </div>
+                                </div>
+                                <p class="doc-color-tail"><nobr>北京宝瑞通典当行有限责任公司</nobr></p>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                                var googletag = googletag || {};
+                                googletag.cmd = googletag.cmd || [];
+                                (function() {
+                                var gads = document.createElement('script');
+                                        gads.async = true;
+                                        gads.type = 'text/javascript';
+                                        var useSSL = 'https:' == document.location.protocol;
+                                        gads.src = (useSSL ? 'https:' : 'http:') +
+                                        '//www.googletagservices.com/tag/js/gpt.js';
+                                        var node = document.getElementsByTagName('script')[0];
+                                        node.parentNode.insertBefore(gads, node);
+                                })();</script>
+
+                    <script type="text/javascript">
+                                googletag.cmd.push(function() {
+                                googletag.defineSlot('/7053729/贷款首页右侧banner', [250, 100], 'div-gpt-ad-1398146978207-0').addService(googletag.pubads());
+                                        googletag.pubads().enableSingleRequest();
+                                        googletag.enableServices();
+                                });</script>
+
+
+                    <!-- 贷款首页右侧banner -->
+                    <div style="width:250px; height:100px;margin-bottom:30px;display:none;" id="div-gpt-ad-1398146978207-0">
+                        <script type="text/javascript">
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1398146978207-0'); });</script><div id="google_ads_iframe_/7053729/贷款首页右侧banner_0__container__" style="border: 0pt none;"><iframe width="250" height="100" frameborder="0" id="google_ads_iframe_/7053729/贷款首页右侧banner_0" name="google_ads_iframe_/7053729/贷款首页右侧banner_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div><iframe width="0" height="0" frameborder="0" id="google_ads_iframe_/7053729/贷款首页右侧banner_0__hidden__" name="google_ads_iframe_/7053729/贷款首页右侧banner_0__hidden__" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" src="javascript:&quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe>
+                    </div>				<div class="ui-titleBody calclist wrap-mbottom-30">
+                        <div class="tb-title wrap-clear">
+                            <div class="tb-title-inner">
+                                <span class="text">常用工具</span>
+                            </div>
+                        </div>
+                        <div class="tb-body">
+                            <div class="list-item wrap-clear">
+                                <div class="face wrap-left shenjia">
+                                    <span data-track="身价计算器|点击图片入口|" data-target="_blank" data-href="/mini/shenjia/">
+                                    </span>
+                                </div>
+                                <div class="detail wrap-left">
+                                    <div><a rel="nofollow" data-track="身价计算器|点击标题入口|" target="_blank" href="/mini/shenjia/">身价计算器</a></div>
+                                    <div class="doc-color-desc">1分钟算出你能贷多少钱</div>
+                                </div>
+                            </div>
+                            <div class="list-item wrap-clear">
+                                <div class="face wrap-left daikuan">
+                                    <span data-track="贷款划算器|点击图片入口|" data-target="_blank" data-href="/mini/daikuanhuasuanqi/"></span>
+                                </div>
+                                <div class="detail wrap-left">
+                                    <div><a rel="nofollow" data-track="贷款划算器|点击标题入口|" target="_blank" href="/mini/daikuanhuasuanqi/">贷款划算器</a></div>
+                                    <div class="doc-color-desc">比比你的贷款划算吗</div>
+                                </div>
+                            </div>
+                            <div style="padding-bottom:0;" class="list-item wrap-clear">
+                                <div class="face wrap-left zige">
+                                    <span data-track="购房资格测试器|点击图片入口|" data-target="_blank" data-href="http://www.rong360.com/calculator/xiangou/"></span>
+                                </div>
+                                <div class="detail wrap-left">
+                                    <div><a rel="nofollow" data-track="购房资格测试器|点击标题入口|" target="_blank" href="http://www.rong360.com/calculator/xiangou/">购房资格测试器</a></div>
+                                    <div class="doc-color-desc">神器在手，买房不愁</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-base partner-list">
+            <div class="ui-titleBody main-titleBody">
+                <div class="tb-title wrap-clear">
+                    <div class="tb-title-inner">
+                        <span class="text">合作机构</span>
+                        <span class="text-desc doc-color-tail">融诺平台有超过<span class="doc-color-red">2000</span>家合作机构</span>
+                    </div>
+                </div>
+                <div class="tb-body bankers"></div>
+            </div>
+        </div>	<div style="display: block;" class="float-bar">
+            <div data-target="_blank" data-href="http://www.rong360.com/ask/submit" class="item">我要提问</div>
+            <div data-on-click="ui:fx.goPageTop" class="item">回到顶部</div>
+        </div>
+        <script type="text/javascript">
+                    $(window).scroll(function() {
+            var scrolls = $(this).scrollTop();
+                    if (scrolls & gt; 100 & amp; & amp; scrolls & lt; 3800){
+            $(".float-bar").show();
+            } else{
+            $(".float-bar").hide();
+            }
+            });
+        </script>
+    </div>
+</block>

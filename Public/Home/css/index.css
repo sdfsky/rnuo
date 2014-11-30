@@ -1,0 +1,377 @@
+/*
+www.rongnuo.net 融诺网
+Copyright(C)2015 http://www.rongnuo.net All Rights reserved
+Author: 宋登峰 <sky_php@qq.com> <http://www.tipask.com>
+*/
+/* 
+    Created on : 2014-11-23, 0:51:56
+    Author     : sdf_sky
+*/
+
+.ask{margin-bottom:32px}
+.ask .ask-bar{margin:0 0 3px}
+.ask .ask-bar .key-word{width:150px;height:24px;padding-left:6px;border:1px solid #cfcfcf;border-right:0;outline:0}
+.ask .ask-bar .key-word::-webkit-input-placeholder{color:#ddd}
+.ask .ask-bar .search,.ask .ask-bar .to-ask{margin-right:10px;cursor:pointer;text-align:center;color:#fff;border:0}
+.ask .ask-bar .search{width:90px;height:26px;line-height:1.2;background-color:#5583ce}
+.ask .ask-bar .search:hover{background-color:#5d8ddc}
+.ask .ask-bar .search:active{background-color:#4c7ac6}
+.ask .ask-bar .to-ask{width:60px;height:22px;padding-top:4px;vertical-align:top;display:inline-block;*display:inline;*zoom:1;background-color:#11a20a}
+.ask .ask-bar .to-ask:hover{background-color:#3fb03a}
+.ask .ask-bar .to-ask:active{background-color:#118c0a}
+.banker-list .face-info .face{padding-right:10px}
+.banker-list .face-info .face img{width:52px;height:52px;border:1px solid #cbcbcb}
+.banker-list p{padding:5px 0}
+.banker-list .tb-body{padding-top:15px;padding-bottom:10px;border-bottom:1px solid #eaeaea}
+.banker-list .ui-hover-graybg{background-color:#eee}
+.chedai .brand-list .list{overflow:hidden}
+.chedai .brand-list .list .item{float:left;line-height:28px;margin:0 0 6px;width:166px}
+.chedai .brand-list .list .item .brand-logo{border:1px solid #f6f6f6;float:left;margin-right:10px;width:26px}
+.chedai .brand-list .more-brand{border-top:1px;clear:both;margin-top:10px;padding-top:10px}
+.chedai .brand-list .more-brand .view-more{margin-left:10px;font-size:12px;overflow:hidden;width:130px}
+.chedai .app-list{width:330px;margin-top:20px;padding-top:10px;border-top:1px dotted #d1d1d1}
+.chedai .app-list .app-item{width:165px;float:left}
+.chedai .app-list .app-item .face{width:32px;height:32px;margin-right:10px;margin-top:10px;float:left}
+.chedai .app-list .app-item .face a{width:32px;height:32px;display:block}
+.chedai .app-list .app-item .face a .ui-icon{cursor:pointer}
+.chedai .app-list .app-item .detail{font-size:14px;line-height:32px}
+.chedai .app-list .app-item .icon-cdjsq{width:32px;height:32px;background-repeat:no-repeat}
+.chedai .app-list .app-item .icon-gcjsq{width:32px;height:32px;background-repeat:no-repeat}
+.chedai .wrap-span-right .topic{color:#05b;line-height:16px}
+.chedai .wrap-span-right .topic .icon-radio{float:left;height:16px;margin-right:5px;width:16px;background-repeat:no-repeat}
+.chedai .wrap-span-right .topic:hover{color:#fff}
+.chedai .wrap-span-right .ui-list{margin-top:4px}
+.daikuan-hot-list{margin-top:-10px}
+.daikuan-hot-list td{height:50px;border-bottom:1px dashed #eaeaea}
+.daikuan-hot-list td b{color:#ff7200}
+.daikuan-hot-list td .ui-btn{width:70px;height:20px;line-height:20px;background-color:#e7f1f9;border:1px solid #bed3e4}
+.daikuan-hot-list td .ui-btn:hover{background-color:#cee6ff}
+.daikuan-search{width:650px;height:295px;padding:30px 0 0 50px;overflow:hidden;background-repeat:no-repeat}
+.daikuan-search .form-wrap .field-wrap{min-height:52px;*height:52px}
+.daikuan-search .form-wrap .field-wrap .ui-select{width:302px}
+.daikuan-search .form-wrap .field-wrap label{top:5px;font-size:14px}
+.daikuan-search .form-wrap .tuijian{min-height:30px;*height:30px;position:relative;top:-10px;font-size:14px}
+.daikuan-search .form-wrap .tuijian .item{width:110px;display:inline-block;*display:inline;*zoom:1}
+.daikuan-search .form-wrap .tuijian .item{width:110px;display:inline-block;*display:inline;*zoom:1;color:#05c}
+.daikuan-search .form-wrap .tuijian .item a{color:#05c}
+.daikuan-search .form-wrap .tuijian .item a:hover{color:#fff}
+.daikuan-search .form-wrap .field-wrap .field .ui-btn{width:304px}
+.daikuan-search .hot-links{margin:10px 0 0 25px}
+.daikuan-search .hot-links a{margin-right:10px}
+.fangdai{width:330px;position:relative}
+.fangdai .cms{position:absolute;left:350px;top:0}
+.fangdai .cms .ui-tab-cms{width:355px}
+.fangdai .ui-tab-nav{margin-top:-6px;border-bottom:1px solid #ababab}
+.fangdai .ui-tab-nav-inner{display:inline-block;border-bottom:0;top:1px}
+.fangdai .bank-list .item{width:315px;padding-bottom:2px;display:block;margin-bottom:8px}
+.fangdai .bank-list .item .name,.fangdai .bank-list .item .zhekou,.fangdai .bank-list .item .lilv,.fangdai .bank-list .item .date{display:inline-block;*zoom:1;*display:inline}
+.fangdai .bank-list .item .name{width:100px}
+.fangdai .bank-list .item .zhekou{width:45px}
+.fangdai .bank-list .item .lilv{width:75px}
+.fangdai .bank-list .item .date{width:80px}
+.fangdai .bank-list .more-bank{padding-top:10px}
+.fangdai .bank-list .more-bank .view-more{margin-left:10px;font-size:12px;overflow:hidden}
+.fangdai .bank-list .more-bank .view-more:hover{color:#222}
+.fangdai .app-list{width:330px;margin-top:22px;padding-top:20px;border-top:1px dotted #d1d1d1}
+.fangdai .app-list .app-item{width:165px;float:left}
+.fangdai .app-list .app-item .face{width:32px;height:32px;margin-right:10px;float:left}
+.fangdai .app-list .app-item .face a{width:32px;height:32px;display:block}
+.fangdai .app-list .app-item .face a .ui-icon{cursor:pointer}
+.fangdai .app-list .app-item .icon-jsq{width:32px;height:32px;background-repeat:no-repeat}
+.fangdai .app-list .app-item .icon-maifangbao{width:32px;height:32px;background-repeat:no-repeat}
+.fangdai .wrap-span-right{height:225px;overflow:hidden}
+.gonglue{margin-bottom:32px}
+.gonglue .tb-title .text{position:relative}
+.gonglue .tb-title .text,.gonglue .tb-title .tail{z-index:2000}
+.gonglue .tb-body{position:relative}
+.gonglue .ui-tab{margin-top:-42px;position:relative}
+.gonglue .ui-tab .ui-tab-nav{position:absolute;right:60px;top:0;display:inline-block;background-color:none}
+.gonglue .ui-tab .ui-tab-content{padding-top:45px}
+.gonglue .ui-tab .ui-list{width:auto}
+.gonglue .ui-tab .ui-list .face{width:88px;height:62px;padding-right:10px;float:left}
+.gonglue .ui-tab .ui-list .face img{width:88px;height:62px;border:1px solid #d9e5f5}
+.gonglue .ui-tab .ui-list .detail .title{margin-bottom:5px;font-size:16px;font-weight:700;color:#555}
+.gonglue .ui-tab .ui-list .detail .desc{line-height:20px}
+.hot-product .title{padding-bottom:5px;font-size:16px;font-weight:700}
+.hot-product .title a{color:#14388c}
+.hot-product .spliter{margin:0 2px;color:#888}
+.hot-product .list{margin:10px 0;padding-top:5px;border:dotted #d1d1d1;border-width:1px 0}
+.hot-product .list .item{width:162px;padding:2px 5px 8px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;float:left}
+.hot-product .list .item img{margin-right:2px;cursor:pointer;border:1px solid #f6f6f6}
+.main-index{background:#fff}
+.main-index .ui-select{width:300px}
+.main-index .wrap-main{width:700px}
+.main-index .wrap-main .wrap-span,.main-index .wrap-main .wrap-span-right{width:335px;margin-right:30px;float:left}
+.main-index .wrap-main .wrap-span .ui-list,.main-index .wrap-main .wrap-span-right .ui-list{margin-bottom:0}
+.main-index .wrap-main .wrap-span .ui-list .item,.main-index .wrap-main .wrap-span-right .ui-list .item{padding:1px 0 7px}
+.main-index .wrap-main .wrap-span-right{margin-right:0}
+.main-index .wrap-sider{margin-right:3px}
+.main-index .wrap-sider .ui-titleBody{padding:0}
+.main-index .wrap-sider .ui-titleBody .ui-list{margin-bottom:0}
+.main-index a:hover{color:#fff;text-decoration:none;background-color:#05c}
+.main-index a.ui-btn{color:#222}
+.main-index .dot{height:14px;overflow:hidden;margin-right:3px;display:inline-block;*zoom:1;*display:inline;font-size:16px;line-height:18px}
+.main-index .btn-yellow-big{width:302px;height:32px;*height:34px;line-height:30px;font-size:16px;text-shadow:0 1px 0 rgba(255,255,255,.38);border:1px solid #92856a;background-repeat:repeat-x}
+.main-index .btn-yellow-big:hover{background-repeat:repeat-x}
+.main-index .btn-yellow-big:active{background-repeat:repeat-x}
+.main-index .btn-yellow-little{width:100px;height:26px;*height:26px;line-height:24px;font-size:14px;border:1px solid #92856a;background-repeat:repeat-x}
+.main-index .btn-yellow-little:hover{background-repeat:repeat-x}
+.main-index .btn-yellow-little:active{background-repeat:repeat-x}
+.main-titleBody{padding:0}
+.main-titleBody .tb-title-inner{margin:0;border-bottom:1px solid #ababab}
+.main-titleBody .tb-title .text-desc{position:relative;top:1px}
+.main-titleBody .tb-title .text{margin-right:5px;font-weight:700;color:#14388c}
+.main-titleBody .tb-title .text a{color:#14388c}
+.main-titleBody .tb-title .text a:hover{color:#FFF}
+.main-titleBody .tb-body{margin:0;padding:10px 0 0}
+.main-index-sider .tb-title-inner{margin:0;border-bottom:1px solid #ababab}
+.float-phone{width:130px;height:130px;position:fixed;left:50%;top:50%;margin-left:500px;margin-top:-140px;background-repeat:no-repeat}
+.partner-list{padding-bottom:40px}
+.partner-list .ui-titleBody{overflow:hidden}
+.partner-list .bankers{width:990px;height:130px;background-repeat:no-repeat}
+.quick-link{font-size:14px}
+.quick-link a{font-size:14px}
+.quick-link .daikuan-list .wrap-border{margin-bottom:15px;border-bottom:1px dotted #d1d1d1}
+.quick-link .daikuan-list .daikuan-item{float:left}
+.quick-link .daikuan-list .title a{font-size:16px;font-weight:700;color:#14388c}
+.quick-link .daikuan-list .title a:hover{color:#fff}
+.quick-link .daikuan-list .desc{padding:5px 0;line-height:22px}
+.quick-link .daikuan-list .span1{width:90px;margin-bottom:15px;padding-right:95px;border-right:1px dotted #d1d1d1;background-repeat:no-repeat}
+.quick-link .daikuan-list .span2{width:128px;margin-bottom:15px;padding-left:20px}
+.quick-link .daikuan-list .span3{width:120px}
+.quick-link .daikuan-list .span4{width:113px;padding:0 80px 0 20px;border-left:1px dotted #d1d1d1;background-repeat:no-repeat}
+.quick-link .credit-types .credit-face{width:335px;height:132px;cursor:pointer;opacity:.9;filter:alpha(opacity=90);background-repeat:no-repeat}
+.quick-link .credit-types .credit-face-hover{opacity:1;filter:alpha(opacity=100)}
+.quick-link .credit-types .link-list{margin:20px 0 10px;background-color:#fff}
+.quick-link .credit-types .link-list .link-item{width:80px;margin:0 0 10px;display:inline-block;*zoom:1}
+.quick-link .credit-types .banks{padding-top:2px;line-height:22px;background:#fff}
+.quick-link-new .item{width:120px;height:120px;*width:115px;float:left;margin-right:10px;cursor:pointer;color:#fff}
+.quick-link-new .item .face{width:120px;height:32px;padding-top:88px}
+.quick-link-new .item .face .text{width:118px;margin-left:1px;height:32px;line-height:32px;text-align:center;font-size:16px;background:rgba(0,0,0,.5);*background:#000}
+.quick-link-new .item .pop{width:100px;height:102px;padding:8px 10px 10px;display:none;font-size:12px;background:#3a6bba}
+.quick-link-new .item .pop .title{font-size:16px}
+.quick-link-new .item .pop .desc{margin-top:2px;line-height:18px;margin-bottom:8px}
+.quick-link-new .wudiya .face{background-repeat:no-repeat}
+.quick-link-new .jingying .face{background-repeat:no-repeat}
+.quick-link-new .gouche .face{background-repeat:no-repeat}
+.quick-link-new .goufang .face{background-repeat:no-repeat}
+.quick-link-new .credit .face{width:180px;margin-right:0;background-repeat:no-repeat}
+.quick-link-new .credit .face .text{width:178px}
+.quick-link-new .credit .pop{width:160px}
+.quick-link-new .credit .text{width:178px}
+.quick-link-new .item:hover .pop{display:block}
+.quick-link-new .item:hover .face{display:none}
+.seo{padding-bottom:40px;border-top:1px solid #d9d9d9;background-color:#f6f6f6}
+.seo .seo-inner{padding-top:20px;border-top:1px solid #fff}
+.seo .seo-inner .view-more{font-weight:400;float:right}
+.seo .seo-inner .view-more .ui-icon{margin-left:2px;top:-1px}
+.seo .seo-inner .view-more .ui-viewmore-toggle{padding-right:20px;position:relative;right:-20px;z-index:1000}
+.seo .seo-inner .view-more .ui-viewmore-toggle:hover{text-decoration:underline}
+.seo .seo-inner .view-more .ui-icon-viewmore{display:inline-block}
+.seo .seo-inner .view-more .ui-icon-viewmore-up{display:none}
+.seo .seo-inner .list{margin-bottom:15px}
+.seo .seo-inner .list .title{padding-bottom:5px;font-weight:700}
+.seo .seo-inner .list .items span.link{width:120px;margin-bottom:5px;display:inline-block}
+.seo .seo-inner .viewmore-up .ui-icon-viewmore{display:none}
+.seo .seo-inner .viewmore-up .ui-icon-viewmore-up{display:inline-block}
+.sns-follow{height:112px;padding-left:96px;border-bottom:1px dotted #d1d1d1;background-repeat:no-repeat}
+.sns-follow .weibo{height:112px;padding-left:15px;line-height:0;border-left:1px dotted #d1d1d1}
+.sns-follow .weibo a{width:54px;height:24px;padding-left:85px;margin-bottom:20px;display:block}
+.sns-follow .weibo a span{width:54px;height:24px;line-height:99;overflow:hidden;display:block;position:relative;left:0;background-repeat:no-repeat}
+.sns-follow .weibo .sina{background-repeat:no-repeat}
+.sns-follow .weibo .qq{background-repeat:no-repeat}
+.sns-follow .weibo a:hover span{background-repeat:no-repeat}
+.sns-follow .more-news{position:relative;top:4px}
+.super-search{height:285px;padding-top:10px;background-repeat:repeat-x}
+.super-search .face{position:absolute;right:13px;top:13px;z-index:9999}
+.super-search .super-search-inner{width:992px;height:276px;margin:auto;padding:1px;position:relative;left:2px;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-nav{width:169px;height:276px;float:left;border-right:1px solid #e6e6e6;background-color:#f6f6f6}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .ui-tab-nav-item{height:45px;float:none;border-bottom:1px solid #e6e6e6}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .ui-tab-nav-item .inner{height:34px;padding-left:17px;padding-top:11px;display:block;color:#555;font-size:16px;font-weight:700}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .ui-tab-nav-item .inner .ui-icon{width:16px;height:16px;margin-right:8px;top:-2px;*top:0;font-size:16px;color:#6a7493;background-position:0 center;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .current .inner,.super-search .super-search-inner .search-wrap .ui-tab-nav .item-hover .inner{color:#05c;background-color:#f6f6f6}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .current .inner .ui-icon,.super-search .super-search-inner .search-wrap .ui-tab-nav .item-hover .inner .ui-icon{color:#05c}
+.super-search .super-search-inner .search-wrap .ui-tab-nav .current .inner{width:153px;color:#05c;background:#fff}
+.super-search .super-search-inner .search-wrap .ui-tab-content{width:528px;height:275px;float:left;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item{margin-right:10px;padding:28px 0 0 32px;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item.bgnone,.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item.credit,.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item.licai{background:0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box{height:210px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .item{min-height:36px;*height:36px;*overflow:visible;padding-bottom:16px;font-size:14px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .item .label{width:60px;padding-right:8px;position:relative;top:5px;top:7px\0;vertical-align:top;text-align:right;font-size:14px;font-weight:700;color:#555;float:left;cursor:default}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .item .content{float:left}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .item .content .info{padding:5px 0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .no-label{margin-left:68px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .search-box .alert-info{margin-left:10px;display:none;float:left;position:relative;top:5px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan{position:relative}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help{height:150px;position:absolute;z-index:1999;right:0;top:50px;color:#888}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help .title{font-size:16px;font-weight:700}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help dl{padding-top:10px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help dt{font-size:14px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help dd{font-size:12px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .daikuan .help dd.phone{font-size:14px;color:#05c}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .search-box{height:180px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .search-box .btn-shoufu{height:32px;margin-left:20px;line-height:32px;font-size:16px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .search-box,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .search-box{overflow:hidden}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .bank-count,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .bank-count{position:relative;top:5px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-fangdai,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-fangdai{width:16px;height:16px;margin-right:5px;top:-1px;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-jsq,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-jsq{width:16px;height:16px;margin-right:5px;top:-1px;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .tail-link,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .tail-link{margin-top:50px;font-size:12px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .ui-btn,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .ui-btn{position:relative;top:10px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .callist,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .callist{margin-top:20px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .callist .content,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .callist .content{position:relative;top:5px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .gouche-hot-links{margin-top:-100px;width:380px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .gouche-hot-links li{margin-top:5px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .gouche-hot-links li{float:left;margin-right:10px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .gouche-hot-links li a{color:#05b}
+.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .gouche-hot-links li a:hover{color:#fff}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai{padding:15px 0 0 30px;overflow:hidden}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .item-span{width:154px;margin-right:20px;height:166px;padding-top:12px;float:left;background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .span-wrap{width:522px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai h4{width:4em;padding-bottom:5px;margin-bottom:14px;font-size:16px;color:#555;border-bottom:2px solid #bbb}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .data-diff{height:36px;margin-bottom:14px;overflow:hidden}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .data-diff .item{width:72px;height:36px;float:left;border-right:1px dotted #ddd}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .data-diff .noborder{width:62px;padding-left:10px;border:0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .data-diff .label{margin-top:-1px;color:#888;line-height:13px;font-size:12px;padding-bottom:6px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .data-diff .data{line-height:1;font-size:18px;color:red}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai a.btn-color-red{width:130px;height:32px;line-height:32px;font-size:16px;color:#fff;border:1px solid #9f3833;background:#b52100;background:gradient(linear,0 0,0 100%,from(#e53000),to(#b52100));background:-webkit-gradient(linear,0 0,0 100%,from(#e53000),to(#b52100))}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai a.btn-color-red:hover{background:#c52500;background:gradient(linear,0 0,0 100%,from(#f43300),to(#c52500));background:-webkit-gradient(linear,0 0,0 100%,from(#f43300),to(#c52500))}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai a.btn-color-red:active{background:#b62200}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .bbs{margin-left:-20px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .bbs-item{width:86px;text-align:center;float:left}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .bbs-item p{line-height:1}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .bbs-item .name{padding:5px 0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app{background:0;overflow:visible}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item{width:230px;height:82px;overflow:visible;float:left;*zoom:1}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item p{padding-bottom:6px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon{width:72px;height:72px;padding-right:10px;*padding-right:5px;float:left}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .ui-icon{width:72px;height:72px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-daikuan{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-fangdai{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-credit{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-jsq{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-kaguanjia{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-maifangbao{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .detail{width:148px;*overflow-x:hidden;*overflow-y:visible;float:left}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .detail .commit .ui-icon{margin-right:0;letter-spacing:-2px;font-size:16px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .download{display:none}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .download .pop{width:60px;margin-right:12px;float:left;border-left:1px solid #fff}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .download .pop .ui-btn{width:52px;height:18px;padding-left:8px;padding-top:4px;line-height:1;text-align:left;border:1px solid #fff;border-left:0;background-image:url(../images/main_index_btn.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .download .pop .ui-btn .ui-icon{top:-1px;*top:2px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .download .pop .pop-content{display:none}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover{position:relative;z-index:1;*zoom:1}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .desc{display:none}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download{height:22px;margin-top:-2px;display:block}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover{position:relative;border-color:#bcbcbc}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .ui-btn{height:20px;padding-top:4px;position:relative;z-index:2;border-color:#bcbcbc;border-bottom-color:#fff;background:0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content{width:100px;padding:9px;position:absolute;z-index:1;left:-1px;top:25px;display:block;line-height:1;border:1px solid #bcbcbc;background-color:#fff}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content p{padding-bottom:10px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content a .ui-icon{top:-2px;*top:0}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content a .android{color:#aacd06}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content a:hover .android{color:#fff}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .ui-face{width:100px;height:100px;display:inline-block;*zoom:1;*display:inline}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-daikuan{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdjsq{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdzgjsq{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-credit{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-kaguanjia{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-maifangbao{background-repeat:no-repeat}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .down-link .pop-content{width:80px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .hot-links{white-space:nowrap;font-size:12px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .hot-links a{margin-right:10px}
+.super-search .super-search-inner .search-face{width:260px;height:275px;position:absolute;right:5px;top:1px;text-align:center;background-color:#fafafa;background:gradient(linear,0 0,0 100%,from(#ededed),to(#fff));background:-webkit-gradient(linear,0 0,0 100%,from(#ededed),to(#fff))}
+.super-search .super-search-inner .search-face .inner{margin:5px;width:250px;height:265px;display:block;background-repeat:no-repeat}
+.main-index .btn-yellow-big{background-position:0 0}
+.main-index .btn-yellow-big:hover{background-position:0 -72px}
+.main-index .btn-yellow-big:active{background-position:0 -144px}
+.main-index .btn-yellow-little{background-position:0 -216px}
+.main-index .btn-yellow-little:hover{background-position:0 -282px}
+.main-index .btn-yellow-little:active{background-position:0 -348px}
+.super-search{background-position:0 -414px}
+.main-index .btn-yellow-big{background-image:url(../images/main_index_x.png)}
+.main-index .btn-yellow-big:hover{background-image:url(../images/main_index_x.png)}
+.main-index .btn-yellow-big:active{background-image:url(../images/main_index_x.png)}
+.main-index .btn-yellow-little{background-image:url(../images/main_index_x.png)}
+.main-index .btn-yellow-little:hover{background-image:url(../images/main_index_x.png)}
+.main-index .btn-yellow-little:active{background-image:url(../images/main_index_x.png)}
+.super-search{background-image:url(../images/main_index_x.png)}
+.chedai .app-list .app-item .icon-cdjsq{background-position:-957px 0}
+.chedai .app-list .app-item .icon-gcjsq{background-position:-957px -72px}
+.chedai .wrap-span-right .topic .icon-radio{background-position:-973px -144px}
+.daikuan-search{background-position:-289px -200px}
+.fangdai .app-list .app-item .icon-jsq{background-position:-957px -565px}
+.fangdai .app-list .app-item .icon-maifangbao{background-position:-957px -637px}
+.float-phone{background-position:-859px -709px}
+.partner-list .bankers{background-position:0 -859px}
+.quick-link .daikuan-list .span1{background-position:right -1038px}
+.quick-link .daikuan-list .span4{background-position:right -1182px}
+.quick-link .credit-types .credit-face{background-position:-649px -1328px}
+.quick-link-new .wudiya .face{background-position:-869px -1502px}
+.quick-link-new .jingying .face{background-position:-869px -1662px}
+.quick-link-new .gouche .face{background-position:-869px -1822px}
+.quick-link-new .goufang .face{background-position:-869px -1982px}
+.quick-link-new .credit .face{background-position:-809px -2142px}
+.sns-follow{background-position:-907px -2302px}
+.sns-follow .weibo a span{background-position:-935px -2447px}
+.sns-follow .weibo .sina{background-position:-904px -2511px}
+.sns-follow .weibo .qq{background-position:-904px -2575px}
+.sns-follow .weibo a:hover span{background-position:-935px -2639px}
+.super-search .super-search-inner{background-position:-287px -2703px}
+.super-search .super-search-inner .search-wrap .ui-tab-content{background-position:right -3021px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item{background-position:right -3309px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-fangdai,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-fangdai{background-position:-973px -3565px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-jsq,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-jsq{background-position:-973px -3621px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .item-span{background-position:-835px -3677px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-daikuan{background-position:-917px -3873px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-fangdai{background-position:-917px -3985px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-credit{background-position:-917px -4097px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-jsq{background-position:-917px -4209px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-kaguanjia{background-position:-917px -4321px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-maifangbao{background-position:-917px -4433px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-daikuan{background-position:-889px -4545px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdjsq{background-position:-889px -4685px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdzgjsq{background-position:-889px -4825px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-credit{background-position:-889px -4965px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-kaguanjia{background-position:-889px -5105px}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-maifangbao{background-position:-889px -5245px}
+.super-search .super-search-inner .search-face .inner{background-position:-739px -5385px}
+.chedai .app-list .app-item .icon-cdjsq{background-image:url(../images/main_index_z.png)}
+.chedai .app-list .app-item .icon-gcjsq{background-image:url(../images/main_index_z.png)}
+.chedai .wrap-span-right .topic .icon-radio{background-image:url(../images/main_index_z.png)}
+.daikuan-search{background-image:url(../images/main_index_z.png)}
+.fangdai .app-list .app-item .icon-jsq{background-image:url(../images/main_index_z.png)}
+.fangdai .app-list .app-item .icon-maifangbao{background-image:url(../images/main_index_z.png)}
+.float-phone{background-image:url(../images/main_index_z.png)}
+.partner-list .bankers{background-image:url(../images/main_index_z.png)}
+.quick-link .daikuan-list .span1{background-image:url(../images/main_index_z.png)}
+.quick-link .daikuan-list .span4{background-image:url(../images/main_index_z.png)}
+.quick-link .credit-types .credit-face{background-image:url(../images/main_index_z.png)}
+.quick-link-new .wudiya .face{background-image:url(../images/main_index_z.png)}
+.quick-link-new .jingying .face{background-image:url(../images/main_index_z.png)}
+.quick-link-new .gouche .face{background-image:url(../images/main_index_z.png)}
+.quick-link-new .goufang .face{background-image:url(../images/main_index_z.png)}
+.quick-link-new .credit .face{background-image:url(../images/main_index_z.png)}
+.sns-follow{background-image:url(../images/main_index_z.png)}
+.sns-follow .weibo a span{background-image:url(../images/main_index_z.png)}
+.sns-follow .weibo .sina{background-image:url(../images/main_index_z.png)}
+.sns-follow .weibo .qq{background-image:url(../images/main_index_z.png)}
+.sns-follow .weibo a:hover span{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .ui-tab-content-item{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-fangdai,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-fangdai{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .fangdai .icon-jsq,.super-search .super-search-inner .search-wrap .ui-tab-content .gouche-new .icon-jsq{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .licai .item-span{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-daikuan{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-fangdai{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-credit{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-jsq{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-kaguanjia{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item .icon .icon-maifangbao{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-daikuan{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdjsq{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-fdzgjsq{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-credit{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-kaguanjia{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-wrap .ui-tab-content .app .app-item-hover .download .pop-hover .pop-content .qrcode-maifangbao{background-image:url(../images/main_index_z.png)}
+.super-search .super-search-inner .search-face .inner{background-image:url(../images/main_index_z.png)}
+
