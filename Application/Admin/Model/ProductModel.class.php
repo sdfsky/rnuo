@@ -7,6 +7,7 @@
  */
 
 namespace Admin\Model;
+use Think\Model;
 
 class ProductModel extends Model {
 
@@ -20,9 +21,8 @@ class ProductModel extends Model {
     protected $_auto = array(
         array('applys', 0, self::MODEL_INSERT),
         array('views', 0, self::MODEL_INSERT),
-        array('create_time', NOW_TIME, self::MODEL_BOTH),
+        array('create_time', NOW_TIME, self::MODEL_INSERT),
         array('update_time', NOW_TIME, self::MODEL_BOTH),
     );
-    
 
 }
